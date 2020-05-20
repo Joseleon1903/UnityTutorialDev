@@ -1,0 +1,20 @@
+Liskov substitution principle
+
+In object-oriented programming, behavioral subtyping is the principle that subclasses should satisfy the expectations of clients accessing subclass objects 
+through references of superclass type, not just as regards syntactic safety (such as absence of "method-not-found" errors) but also as regards behavioral correctness. 
+Specifically, properties that clients can prove using the specification of an object's presumed type should hold even though the object is actually a member of a subtype of that type.
+
+The Liskov Substitution Principle in practical software development
+The principle defines that objects of a superclass shall be replaceable with objects of its subclasses without breaking the application.
+That requires the objects of your subclasses to behave in the same way as the objects of your superclass. You can achieve that by following a few rules,
+which are pretty similar to the design by contract concept defined by Bertrand Meyer.
+
+An overridden method of a subclass needs to accept the same input parameter values as the method of the superclass.
+That means you can implement less restrictive validation rules, but you are not allowed to enforce stricter ones in your subclass. 
+Otherwise, any code that calls this method on an object of the superclass might cause an exception, if it gets called with an object of the subclass.
+
+Similar rules apply to the return value of the method. 
+The return value of a method of the subclass needs to comply with the same rules as the return value of the method of the superclass.
+You can only decide to apply even stricter rules by returning a specific subclass of the defined return value, or by returning a subset of the valid return values of the superclass.
+
+ * the example Item is the superclass and Weapon & Consumable are the subtype where Itemlogger just apply the different implementation of supreclass on any subtype
