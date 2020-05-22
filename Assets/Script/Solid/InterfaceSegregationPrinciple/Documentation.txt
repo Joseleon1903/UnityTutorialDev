@@ -1,0 +1,11 @@
+Interface Segregation Principle
+
+In the field of software engineering, the interface-segregation principle (ISP) states that no client should be forced to depend on methods it does not use.
+ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them. 
+Such shrunken interfaces are also called role interfaces.[2] ISP is intended to keep a system decoupled and thus easier to refactor, change, and redeploy. 
+ISP is one of the five SOLID principles of object-oriented design, similar to the High Cohesion Principle of GRASP.
+
+The Interface Segregation Principle (ISP) states that a client should not be exposed to methods it doesn’t need. '
+Declaring methods in an interface that the client doesn’t need pollutes the interface and leads to a “bulky” or “fat” interface.
+
+* In the class ICharacter with have an example about this pricnciple.
