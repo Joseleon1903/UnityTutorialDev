@@ -6,5 +6,4 @@ public class ConstantMovement : MonoBehaviour, IMovementImputGetter
 
     public float Vertical => 1.5f;
 
-    
 }

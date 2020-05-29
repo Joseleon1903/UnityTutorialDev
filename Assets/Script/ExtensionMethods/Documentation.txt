@@ -1,0 +1,15 @@
+Unity Extension Methods
+
+Reference Link: https://unity3d.college/2016/11/22/unity-extension-methods/
+
+Do you ever find yourself writing a method that you feel could or should be part of an existing Unity component?
+Have you ever wished the Vector3 class had a few more methods?  You should should be using extension methods!
+
+The biggest difference between a regular method and an extension is how you call them.
+Extension methods appear to be methods on an existing class (typically something thats sealed or you don’t want to inherit from).
+
+Benefits
+  * Discoverability – You can see them with Intellisense. This makes it easy to see what extra functionality you’ve provided for the classes.
+  * Cleanliness – You can avoid a bunch of “SomethingHelper.cs” classes.
+  * Reusability – Typically your extension methods are simple and can be re-used across all of your projects.
+

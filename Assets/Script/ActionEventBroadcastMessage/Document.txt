@@ -1,0 +1,30 @@
+Unity Events, Actions, and BroadcastMessage
+
+BroadcastMessage
+
+Reference Link: https://unity3d.college/2016/10/05/unity-events-actions-delegates/
+
+The BroadcastMessage method is part of the MonoBehaviour class.  It allows you to send a loosely coupled message to all active gameobjects.
+
+BroadcastMessage is simple to use and accomplishes the task of sending a message from one gameObject to another.
+
+The biggest issue with BroadcastMessage is how it refers to the method that will be called.  Because it takes a string as the first parameter,
+there is no compile time verification that the method actually exists.
+
+It can be prone to typos, and it introduces danger when refactoring / renaming your methods.  
+If the method name in the string doesn’t match the method name in your classes, it will no-longer work,
+and there’s no obvious indication of this beyond your game failing to work properly.
+
+The other parameters are also not tightly coupled, so there’s no parameter verification.  
+If your method required a string and an int, but you call BroadcastMessage with two strings,
+your call will fail, and again there’s no compile time indication of this issue.
+
+Note:
+
+	* We have to check our event for null before calling it.  
+	* If nothing has registered with our event yet, and we don’t do a null check, we’ll get a null reference exception.
+
+	* While this is great for the majority of events, there is one reason you may want to still use the occasional event.
+	* That would be when your event has many parameters that can be easily confused with each other. 
+	* My recommendation for that situation however is to re-think your events and see if the amount of data you’re passing is larger than it needs to be.
+	* If you really need to pass a lot of data to an event though, another great option is to create a new class or struct and fill it with your data, then pass that into the event.
